@@ -34,4 +34,14 @@ for i in range (1,1000001):
     if Customer_Pick<Prob_A1:
         Store = "A1"
         Profit = Profit + (CA1-2)
+    elif Customer_Pick < (Prob_A1 + Prob_A2):
+        Store = "A2"
+        Profit = Profit + (CA2 - 2)
+    elif Customer_Pick < (Prob_A1 + Prob_A2 + Prob_B1):
+        Store = "B1"
+    else:
+        Store = "B2"
+
+Avg_Profit = Profit / 1000000
+print(Avg_Profit)
 

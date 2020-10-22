@@ -1,6 +1,3 @@
-#Finally, convert your code in Part 3 as a function. The inputs to your function should be L(A1), L(A2), C(A1), and C(A2). The output should be the expected profit. Write a program that explores several different combinations of those four parameters and tries to find the combination that maximizes profit. We are not expecting a program that will always return the best combination, but we want to see at least some thoughtful approach to finding a good combination of values. 
-
-
 import decimal
 import random
 

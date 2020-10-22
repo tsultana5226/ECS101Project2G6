@@ -27,3 +27,28 @@ def max_profit(LA1,LA2,CA1,CA2):
 
         # The sum of each stores score
         total_score= Score_A1 + Score_A2 + Score_B1 + Score_B2
+        
+        # Finds the customer's probability of each store by doing the stores score divided by the total score
+        Prob_A1= Score_A1/total_score
+        Prob_A2= Score_A2/total_score
+        Prob_B1= Score_B1/total_score
+        Prob_B2= Score_B2/total_score
+
+        # Picks a number from 0 to 1
+        Customer_Pick = random.random()
+
+        # This block of code checks which probability range that the customer falls in and pics the proper store accordingly
+        if Customer_Pick<Prob_A1:
+            Store = "A1"
+            Profit = Profit + (CA1-2)
+        elif Customer_Pick < (Prob_A1 + Prob_A2):
+            Store = "A2"
+            Profit = Profit + (CA2 - 2)
+        elif Customer_Pick < (Prob_A1 + Prob_A2 + Prob_B1):
+            Store = "B1"
+        else:
+            Store = "B2"
+
+    # This line calculates the average profit by divided by 1 million which is the number of trials and prints the output
+    Avg_Profit = Profit / 1000000
+    return Avg_Profit

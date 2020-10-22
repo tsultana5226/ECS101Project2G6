@@ -52,3 +52,14 @@ def max_profit(LA1,LA2,CA1,CA2):
     # This line calculates the average profit by divided by 1 million which is the number of trials and prints the output
     Avg_Profit = Profit / 1000000
     return Avg_Profit
+
+def float_range(start, stop, step):
+    
+    while start<stop:
+        yield float(start)
+        start += decimal.Decimal(step)
+        
+Costs = list(float_range(2,5.01,'0.01'))
+
+profits = [] 
+input_values = [[]]

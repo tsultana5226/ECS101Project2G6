@@ -53,32 +53,35 @@ def max_profit(LA1,LA2,CA1,CA2):
     Avg_Profit = Profit / 1000000
     return Avg_Profit
 
+# create a list with all the number between 2 and 5 inclusive in increments of 0.1 for all possible costs
 def float_range(start, stop, step):
     
     while start<stop:
         yield float(start)
         start += decimal.Decimal(step)
-        
+# output the list of costs        
 Costs = list(float_range(2,5.01,'0.01'))
 
 profits = [] 
 input_values = [[]]
 
+# loop thorugh for each cost value
 for c in Costs :
     CA1=c
     CA2=c
     LA1=0
     LA2=10
+# loop through to try every possible location for both stores and add them in the list
     while LA1<=10:
         profits.append(max_profit(LA1,LA2,CA1,CA2))
         input_values.append([LA1,LA2,c,c])
         LA2-=1
         LA1+=1
-        
+# find the max out of all the calculated values from the list         
 MaxCalProf = profits.index(max(profits))
 MaxValues = input_values[MaxCalProf]
 
 
-
+# print results clearly
 print("The maximum profit occurs when Shop 1 is at Location",str(MaxValues[0])," ,Shop 2 is at Location",str(MaxValues[1])," and the cost for Shop 1 is ",str(MaxValues[2])," and Shop 2 is",str(MaxValues[3]),". The Maximum Profit would be ", str(max(profits)))
     
